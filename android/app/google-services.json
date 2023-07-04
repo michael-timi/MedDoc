@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "538340785905",
+    "project_id": "meddoc-10c45",
+    "storage_bucket": "meddoc-10c45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538340785905:android:6ad46ff129d12a390ff350",
+        "android_client_info": {
+          "package_name": "com.saarimtech.meddoc.meddoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538340785905-80fkep720efpv0iv9ojtlf38r1hquiku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ_cDJ3wSbBBwMC4pyVVraMmhruN-DA5k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538340785905-80fkep720efpv0iv9ojtlf38r1hquiku.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "538340785905-24cjt779107no93p96cvkai46eb16kgs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.saarimtech.meddoc.meddoc"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
