@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meddoc/Screens/NewSplashScreen.dart';
 import 'package:meddoc/Screens/SignIn.dart';
-import 'package:meddoc/Screens/SignUp.dart';
-import 'package:meddoc/Screens/SplashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:meddoc/Screens/learning.dart';
-import 'Screens/VerificationScreen.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -26,7 +21,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MedDoc',
       debugShowCheckedModeBanner: false,
-
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -34,5 +28,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

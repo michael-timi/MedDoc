@@ -254,8 +254,12 @@ class _SignInState extends State<SignIn> {
       if (verfiyUser()) {
         setToken(user, "Doctors");
         if (status == "true") {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (builder) => DoctorsNavigationBar(selectedIndex: 0,)));
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (builder) => DoctorsNavigationBar(
+                        selectedIndex: 0,
+                      )));
         } else {
           Navigator.pushReplacement(
               context,
@@ -269,8 +273,12 @@ class _SignInState extends State<SignIn> {
     } else {
       if (verfiyUser()) {
         setToken(user, "Patients");
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (builder) => PatientNavigationBar(selectedindex: 0,)));
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (builder) => PatientNavigationBar(
+                      selectedindex: 0,
+                    )));
       } else {
         showEmailVerificationDoctorDialog(user);
       }
@@ -279,7 +287,8 @@ class _SignInState extends State<SignIn> {
 
   void showEmailVerificationDoctorDialog(User? user) {
     User user = FirebaseAuth.instance.currentUser!;
-    user.sendEmailVerification()
+    user
+        .sendEmailVerification()
         .whenComplete(() => {
               showCupertinoDialog(
                   context: context,
@@ -336,7 +345,6 @@ class _SignInState extends State<SignIn> {
     });
   }
 
-
   setVerification(User user, String type) {
     DatabaseReference ref =
         FirebaseDatabase.instance.ref("Users").child(type).child(user!.uid);
@@ -353,10 +361,10 @@ class _SignInState extends State<SignIn> {
     });
   }
 
-    bool verfiyUser() {
-      User user = FirebaseAuth.instance.currentUser!;
-      return user.emailVerified;
-    }
+  bool verfiyUser() {
+    User user = FirebaseAuth.instance.currentUser!;
+    return user.emailVerified;
+  }
 
   void requestPermission() async {
     FirebaseMessaging messaging = FirebaseMessaging.instance;
@@ -418,7 +426,9 @@ class _SignInState extends State<SignIn> {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (builder) => DoctorsNavigationBar(selectedIndex: 0,)));
+                    builder: (builder) => DoctorsNavigationBar(
+                          selectedIndex: 0,
+                        )));
           } else {
             Navigator.pushReplacement(
                 context,
@@ -430,8 +440,12 @@ class _SignInState extends State<SignIn> {
       } else {
         if (verfiyUser()) {
           setToken(user, "Patients");
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (builder) => PatientNavigationBar(selectedindex: 0,)));
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (builder) => PatientNavigationBar(
+                        selectedindex: 0,
+                      )));
         }
       }
     }

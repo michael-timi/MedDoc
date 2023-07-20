@@ -40,7 +40,7 @@ dependencies:
   curved_navigation_bar: ^1.0.3
   gap: ^2.0.0
   fluentui_icons: ^1.0.0
-  google_fonts: ^2.1.0
+  google_fonts: ^4.0.4
   unicons: ^1.0.0+2
   firebase_core: ^2.1.1
   image_picker: ^0.8.6

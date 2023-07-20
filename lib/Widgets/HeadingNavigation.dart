@@ -6,7 +6,7 @@ import '../Styles/styles.dart';
 
 class HeadingNav extends StatefulWidget {
   String title;
-   HeadingNav({Key? key,required this.title}) : super(key: key);
+  HeadingNav({Key? key, required this.title}) : super(key: key);
 
   @override
   State<HeadingNav> createState() => _HeadingNavState();
@@ -15,12 +15,21 @@ class HeadingNav extends StatefulWidget {
 class _HeadingNavState extends State<HeadingNav> {
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(widget.title,style: GoogleFonts.montserrat(fontSize: 12,fontWeight: FontWeight.w500,color: Colors.black),),
-        Text("SEE ALL",style: GoogleFonts.montserrat(fontSize: 12,fontWeight: FontWeight.w500,color: Styles.secondryColor),),
-
+        Text(
+          widget.title,
+          style: GoogleFonts.montserrat(
+              fontSize: 12, fontWeight: FontWeight.w500, color: Colors.black),
+        ),
+        Text(
+          "SEE ALL",
+          style: GoogleFonts.montserrat(
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
+              color: Styles.secondryColor),
+        ),
       ],
     );
   }
