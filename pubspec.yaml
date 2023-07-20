@@ -29,42 +29,39 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  booking_calendar: ^1.1.6
+  carousel_slider: ^4.1.1
+  cupertino_icons: ^1.0.2
+  curved_navigation_bar: ^1.0.3
+  dropdown_search: ^5.0.3
+  firebase_app_check: ^0.1.5+1
+  firebase_auth: ^4.1.0
+  firebase_core: ^2.1.1
+  firebase_database: ^10.0.3
+  firebase_messaging: ^14.1.0
+  firebase_storage: ^11.0.3
+  fluentui_icons: ^1.0.0
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-
-  curved_navigation_bar: ^1.0.3
-  gap: ^2.0.0
-  fluentui_icons: ^1.0.0
-  google_fonts: ^4.0.4
-  unicons: ^1.0.0+2
-  firebase_core: ^2.1.1
-  image_picker: ^0.8.6
-  firebase_auth: ^4.1.0
-  firebase_database: ^10.0.3
-  firebase_storage: ^11.0.3
-  booking_calendar: ^1.1.6
-  lottie: ^1.4.3
   flutter_rating_bar: ^4.0.1
-  uuid: ^3.0.6
-  carousel_slider: ^4.1.1
-  firebase_messaging: ^14.1.0
-  http: ^0.13.5
-  dropdown_search: ^5.0.3
-  permission_handler: ^10.2.0
-  google_maps_flutter: ^2.2.1
-  google_places_for_flutter: ^1.0.1
-  google_maps_flutter_web: ^0.4.0+3
+  gap: ^2.0.0
+  get: ^4.3.0
   geocoder2: ^1.4.0
+  google_fonts: ^4.0.4
+  google_maps_flutter: ^2.2.1
+  google_maps_flutter_web: ^0.4.0+3
+  google_places_for_flutter: ^1.0.1
+  http: ^0.13.5
+  image_picker: ^0.8.6
+  lottie: ^1.4.3
+  permission_handler: ^10.2.0
+  unicons: ^1.0.0+2
+  uuid: ^3.0.6
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.10.0"
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: "^0.10.0"
 
 flutter_icons:
   android: "launcher_icon"
@@ -81,7 +78,6 @@ flutter_icons:
     image_path: "assets/images/appicon.png"
     icon_size: 48 # min:48, max:256, default: 48
 
-
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -91,7 +87,6 @@ flutter_icons:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -103,13 +98,10 @@ flutter:
   assets:
     - assets/images/
     - animations/
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

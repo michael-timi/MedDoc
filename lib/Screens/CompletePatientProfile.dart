@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, unnecessary_null_comparison
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -217,6 +219,7 @@ class _CompletePatientProfileState extends State<CompletePatientProfile> {
   }
 
   void addtoDatabase(String uid, String downloadURL) {
+    print('adding to DB');
     Map<String, Object> map = {
       'name': widget.firstName + " " + widget.name + " " + widget.surName,
       'email': widget.email,
@@ -229,76 +232,75 @@ class _CompletePatientProfileState extends State<CompletePatientProfile> {
       'address': _addressController.text,
       'emailVerified': false,
     };
-
+    print('adding to DB 2');
     DatabaseReference ref =
         FirebaseDatabase.instance.ref("Users").child("Patients").child(uid);
+    print('adding to DB 3');
     ref.update(map).whenComplete(() {
+      print('adding to DB 4');
       setToken(uid, "Patients");
+      print('adding to DB 5');
       showEmailVerificationDialog(uid);
-    }).onError((error, stackTrace) => {
-          setState(() {
-            _loading = false;
-          })
-        });
+    }).onError((error, stackTrace) => setState(() {
+          _loading = false;
+          print('adding to DB 6');
+        }));
   }
 
   void showEmailVerificationDialog(String uid) {
     User user = FirebaseAuth.instance.currentUser!;
-    user.sendEmailVerification().whenComplete(() => {
-          showCupertinoDialog(
-              context: context,
-              builder: (builder) {
-                return CupertinoAlertDialog(
-                  title: Text(
-                    "Email Verification",
+    user.sendEmailVerification().whenComplete(() => showCupertinoDialog(
+        context: context,
+        builder: (builder) {
+          return CupertinoAlertDialog(
+            title: Text(
+              "Email Verification",
+              style: GoogleFonts.montserrat(
+                  fontSize: 16, fontWeight: FontWeight.w400),
+            ),
+            content: Column(
+              children: [
+                Gap(10),
+                Lottie.asset("animations/emailverify.json",
+                    width: 250, height: 180, repeat: false),
+                Gap(5),
+                Text(
+                  "A verification email has sent to:\n" +
+                      widget.email +
+                      "\nPlease check your inbox to get verified",
+                  style: GoogleFonts.montserrat(
+                      fontSize: 14, fontWeight: FontWeight.w400),
+                  textAlign: TextAlign.center,
+                ),
+                Gap(5),
+                Text(
+                  "Login, after verification completes",
+                  style: GoogleFonts.montserrat(
+                      fontSize: 14, fontWeight: FontWeight.w300),
+                  textAlign: TextAlign.center,
+                ),
+                CupertinoDialogAction(
+                  child: Text(
+                    "Ok..",
                     style: GoogleFonts.montserrat(
-                        fontSize: 16, fontWeight: FontWeight.w400),
+                        fontSize: 14, fontWeight: FontWeight.w400),
                   ),
-                  content: Column(
-                    children: [
-                      Gap(10),
-                      Lottie.asset("animations/emailverify.json",
-                          width: 250, height: 180, repeat: false),
-                      Gap(5),
-                      Text(
-                        "A verification email has sent to:\n" +
-                            widget.email +
-                            "\nPlease check your inbox to get verified",
-                        style: GoogleFonts.montserrat(
-                            fontSize: 14, fontWeight: FontWeight.w400),
-                        textAlign: TextAlign.center,
-                      ),
-                      Gap(5),
-                      Text(
-                        "Login, after verification completes",
-                        style: GoogleFonts.montserrat(
-                            fontSize: 14, fontWeight: FontWeight.w300),
-                        textAlign: TextAlign.center,
-                      ),
-                      CupertinoDialogAction(
-                        child: Text(
-                          "Ok..",
-                          style: GoogleFonts.montserrat(
-                              fontSize: 14, fontWeight: FontWeight.w400),
-                        ),
-                        isDefaultAction: true,
-                        isDestructiveAction: false,
-                        onPressed: () {
-                          setState(() {
-                            _loading = false;
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (builder) => SignIn()),
-                                (route) => false);
-                          });
-                        },
-                      ),
-                    ],
-                  ),
-                );
-              })
-        });
+                  isDefaultAction: true,
+                  isDestructiveAction: false,
+                  onPressed: () {
+                    setState(() {
+                      _loading = false;
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (builder) => SignIn()),
+                          (route) => false);
+                    });
+                  },
+                ),
+              ],
+            ),
+          );
+        }));
   }
 
   bool verfiyUser() {
@@ -349,6 +351,7 @@ class _CompletePatientProfileState extends State<CompletePatientProfile> {
           storageRef
               .getDownloadURL()
               .then((value) => {
+                    // print('adding to DB');
                     addtoDatabase(uid, value),
                   })
               .onError((error, stackTrace) => {

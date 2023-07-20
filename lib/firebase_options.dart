@@ -17,19 +17,13 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -52,11 +46,31 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCR9hJ4ZV6oWFjZs2KjkMdS63SeWX2dMec',
+    appId: '1:850354737228:web:6abf2565bad6975a9124e9',
+    messagingSenderId: '850354737228',
+    projectId: 'med-doc-2d2e9',
+    authDomain: 'med-doc-2d2e9.firebaseapp.com',
+    storageBucket: 'med-doc-2d2e9.appspot.com',
+    measurementId: 'G-3E56Q4VJL5',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyASUx5Z93HMNuX4dl7ErzKmm7qkqw-EN9E',
     appId: '1:850354737228:android:91b0ccbe2182ad939124e9',
     messagingSenderId: '850354737228',
     projectId: 'med-doc-2d2e9',
     storageBucket: 'med-doc-2d2e9.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyDCEE-Wv-RKPLTMdfYshSRQekwX3qoNyME',
+    appId: '1:850354737228:ios:35230c4243b80b6a9124e9',
+    messagingSenderId: '850354737228',
+    projectId: 'med-doc-2d2e9',
+    storageBucket: 'med-doc-2d2e9.appspot.com',
+    iosClientId: '850354737228-0gm97d9vul7l5vpmrn0lv8p7mno0m0hd.apps.googleusercontent.com',
+    iosBundleId: 'com.app.meddoc',
   );
 }
