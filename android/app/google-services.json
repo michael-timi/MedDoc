@@ -1,37 +1,37 @@
 {
   "project_info": {
-    "project_number": "538340785905",
-    "project_id": "meddoc-10c45",
-    "storage_bucket": "meddoc-10c45.appspot.com"
+    "project_number": "850354737228",
+    "project_id": "med-doc-2d2e9",
+    "storage_bucket": "med-doc-2d2e9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:538340785905:android:6ad46ff129d12a390ff350",
+        "mobilesdk_app_id": "1:850354737228:android:91b0ccbe2182ad939124e9",
         "android_client_info": {
           "package_name": "com.app.meddoc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "538340785905-80fkep720efpv0iv9ojtlf38r1hquiku.apps.googleusercontent.com",
+          "client_id": "850354737228-6rjvagj1v7l407s086g1huqtq3bf59hm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDQ_cDJ3wSbBBwMC4pyVVraMmhruN-DA5k"
+          "current_key": "AIzaSyASUx5Z93HMNuX4dl7ErzKmm7qkqw-EN9E"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "538340785905-80fkep720efpv0iv9ojtlf38r1hquiku.apps.googleusercontent.com",
+              "client_id": "850354737228-6rjvagj1v7l407s086g1huqtq3bf59hm.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "538340785905-24cjt779107no93p96cvkai46eb16kgs.apps.googleusercontent.com",
+              "client_id": "850354737228-0gm97d9vul7l5vpmrn0lv8p7mno0m0hd.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.app.meddoc"

@@ -17,13 +17,19 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -46,32 +52,11 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyD-fKb9dC0faumJxwBwp0vHj0TGcouirU8',
-    appId: '1:538340785905:web:f104acf23125a1f60ff350',
-    messagingSenderId: '538340785905',
-    projectId: 'meddoc-10c45',
-    authDomain: 'meddoc-10c45.firebaseapp.com',
-    storageBucket: 'meddoc-10c45.appspot.com',
-    measurementId: 'G-E4P4Z2XERL',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDQ_cDJ3wSbBBwMC4pyVVraMmhruN-DA5k',
-    appId: '1:538340785905:android:6ad46ff129d12a390ff350',
-    messagingSenderId: '538340785905',
-    projectId: 'meddoc-10c45',
-    storageBucket: 'meddoc-10c45.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCXfcV-s1WKlQseLtgbqKl-swUNybEr9-s',
-    appId: '1:538340785905:ios:4e5eb598a7b7ecdd0ff350',
-    messagingSenderId: '538340785905',
-    projectId: 'meddoc-10c45',
-    storageBucket: 'meddoc-10c45.appspot.com',
-    iosClientId:
-        '538340785905-24cjt779107no93p96cvkai46eb16kgs.apps.googleusercontent.com',
-    iosBundleId: 'com.app.meddoc',
+    apiKey: 'AIzaSyASUx5Z93HMNuX4dl7ErzKmm7qkqw-EN9E',
+    appId: '1:850354737228:android:91b0ccbe2182ad939124e9',
+    messagingSenderId: '850354737228',
+    projectId: 'med-doc-2d2e9',
+    storageBucket: 'med-doc-2d2e9.appspot.com',
   );
 }
