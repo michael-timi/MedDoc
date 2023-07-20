@@ -1,4 +1,4 @@
-package com.saarimtech.meddoc.meddoc
+package com.app.meddoc
 
 import io.flutter.embedding.android.FlutterActivity
 

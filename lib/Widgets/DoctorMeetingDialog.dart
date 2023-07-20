@@ -20,39 +20,38 @@ class DoctorMeetingDialog extends StatefulWidget {
 }
 
 class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
-  int _startMin=00;
-  int _startHr=08;
+  int _startMin = 00;
+  int _startHr = 08;
 
-  int _endMin=00;
-  int _endHr=16;
+  int _endMin = 00;
+  int _endHr = 16;
 
-  int _duration=30;
+  int _duration = 30;
 
-  int _price=30;
+  int _price = 30;
 
-  List<int> weekends=[];
+  List<int> weekends = [];
 
-  bool monday=false;
-  bool tuesday=false;
-  bool wednesday=false;
-  bool thursday=false;
-  bool friday=false;
-  bool saturday=false;
-  bool sunday=true;
-  String symbol="₱";
-  Color unSelected=Colors.white;
-  Color selected=Styles.shadeColorPrimary;
-  TextEditingController priceController=TextEditingController();
-
+  bool monday = false;
+  bool tuesday = false;
+  bool wednesday = false;
+  bool thursday = false;
+  bool friday = false;
+  bool saturday = false;
+  bool sunday = true;
+  String symbol = "NGN";
+  Color unSelected = Colors.white;
+  Color selected = Styles.shadeColorPrimary;
+  TextEditingController priceController = TextEditingController();
 
   @override
   void initState() {
-    priceController.text=_price.toString();
+    priceController.text = _price.toString();
   }
 
   @override
   Widget build(BuildContext context) {
-    final size=AppLayout.getSize(context);
+    final size = AppLayout.getSize(context);
     return Column(
       children: [
         Gap(10),
@@ -61,52 +60,52 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
           children: [
             Container(
               width: 80,
-              child:Text("Start Time: ",textAlign: TextAlign.start,style: GoogleFonts.montserrat(fontSize: 14,fontWeight: FontWeight.w400)),
+              child: Text("Start Time: ",
+                  textAlign: TextAlign.start,
+                  style: GoogleFonts.montserrat(
+                      fontSize: 14, fontWeight: FontWeight.w400)),
             ),
             GestureDetector(
-                onTap: (){
+                onTap: () {
                   setState(() {
-                    if(_startHr==0&&_startMin==0){
-
-                    }else{
-                      if(_startMin==0){
+                    if (_startHr == 0 && _startMin == 0) {
+                    } else {
+                      if (_startMin == 0) {
                         _startHr--;
-                        _startMin=45;
-
-                      }else{
-                        _startMin-=15;
+                        _startMin = 45;
+                      } else {
+                        _startMin -= 15;
                       }
-
-
-
                     }
                   });
-
                 },
-                child: ExtraSmallIcon(icon: CupertinoIcons.minus,iconColor: Colors.white,bgColor: Colors.redAccent,)),
-            Text(_startHr.toString()+":"+_startMin.toString(),style: GoogleFonts.montserrat(fontSize: 14,fontWeight: FontWeight.w400)),
+                child: ExtraSmallIcon(
+                  icon: CupertinoIcons.minus,
+                  iconColor: Colors.white,
+                  bgColor: Colors.redAccent,
+                )),
+            Text(_startHr.toString() + ":" + _startMin.toString(),
+                style: GoogleFonts.montserrat(
+                    fontSize: 14, fontWeight: FontWeight.w400)),
             GestureDetector(
-                onTap: (){
-
+                onTap: () {
                   setState(() {
-                    if(_startHr==23&&_startMin==45){
-
-                    }else{
-                      if(_startMin==45){
+                    if (_startHr == 23 && _startMin == 45) {
+                    } else {
+                      if (_startMin == 45) {
                         _startHr++;
-                        _startMin=0;
-
-                      }else{
-                        _startMin+=15;
+                        _startMin = 0;
+                      } else {
+                        _startMin += 15;
                       }
                     }
-
-
-
                   });
                 },
-                child: ExtraSmallIcon(icon: Icons.add,iconColor: Colors.white,bgColor: Styles.primaryColor,)),
-
+                child: ExtraSmallIcon(
+                  icon: Icons.add,
+                  iconColor: Colors.white,
+                  bgColor: Styles.primaryColor,
+                )),
           ],
         ),
         Gap(10),
@@ -115,51 +114,52 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
           children: [
             Container(
               width: 80,
-              child:Text("End Time: ",textAlign: TextAlign.start,style: GoogleFonts.montserrat(fontSize: 14,fontWeight: FontWeight.w400)),
+              child: Text("End Time: ",
+                  textAlign: TextAlign.start,
+                  style: GoogleFonts.montserrat(
+                      fontSize: 14, fontWeight: FontWeight.w400)),
             ),
             GestureDetector(
-                onTap: (){
+                onTap: () {
                   setState(() {
-                    if(_endHr==0&&_endMin==0){
-
-                    }else{
-                      if(_endMin==0){
+                    if (_endHr == 0 && _endMin == 0) {
+                    } else {
+                      if (_endMin == 0) {
                         _endHr--;
-                        _endMin=45;
-
-                      }else{
-                        _endMin-=15;
+                        _endMin = 45;
+                      } else {
+                        _endMin -= 15;
                       }
-
-
-
                     }
                   });
                 },
-                child: ExtraSmallIcon(icon: CupertinoIcons.minus,iconColor: Colors.white,bgColor: Colors.redAccent,)),
-            Text(_endHr.toString()+":"+_endMin.toString(),style: GoogleFonts.montserrat(fontSize: 14,fontWeight: FontWeight.w400)),
+                child: ExtraSmallIcon(
+                  icon: CupertinoIcons.minus,
+                  iconColor: Colors.white,
+                  bgColor: Colors.redAccent,
+                )),
+            Text(_endHr.toString() + ":" + _endMin.toString(),
+                style: GoogleFonts.montserrat(
+                    fontSize: 14, fontWeight: FontWeight.w400)),
             GestureDetector(
-                onTap: (){
-
+                onTap: () {
                   setState(() {
-                    if(_endHr==23&&_endMin==45){
-
-                    }else{
-                      if(_endMin==45){
+                    if (_endHr == 23 && _endMin == 45) {
+                    } else {
+                      if (_endMin == 45) {
                         _endHr++;
-                        _endMin=0;
-
-                      }else{
-                        _endMin+=15;
+                        _endMin = 0;
+                      } else {
+                        _endMin += 15;
                       }
                     }
-
-
-
                   });
                 },
-                child: ExtraSmallIcon(icon: Icons.add,iconColor: Colors.white,bgColor: Styles.primaryColor,)),
-
+                child: ExtraSmallIcon(
+                  icon: Icons.add,
+                  iconColor: Colors.white,
+                  bgColor: Styles.primaryColor,
+                )),
           ],
         ),
         Gap(10),
@@ -168,30 +168,39 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
           children: [
             Container(
               width: 80,
-              child:Text("Duration: ",textAlign: TextAlign.start,style: GoogleFonts.montserrat(fontSize: 14,fontWeight: FontWeight.w400)),
+              child: Text("Duration: ",
+                  textAlign: TextAlign.start,
+                  style: GoogleFonts.montserrat(
+                      fontSize: 14, fontWeight: FontWeight.w400)),
             ),
             GestureDetector(
-                onTap: (){
+                onTap: () {
                   setState(() {
-                    if(_duration==0){
-
-                    }else{
+                    if (_duration == 0) {
+                    } else {
                       _duration--;
                     }
                   });
-
                 },
-                child: ExtraSmallIcon(icon: CupertinoIcons.minus,iconColor: Colors.white,bgColor: Colors.redAccent,)),
-            Text(_duration.toString()+"Min",style: GoogleFonts.montserrat(fontSize: 14,fontWeight: FontWeight.w400)),
+                child: ExtraSmallIcon(
+                  icon: CupertinoIcons.minus,
+                  iconColor: Colors.white,
+                  bgColor: Colors.redAccent,
+                )),
+            Text(_duration.toString() + "Min",
+                style: GoogleFonts.montserrat(
+                    fontSize: 14, fontWeight: FontWeight.w400)),
             GestureDetector(
-                onTap: (){
+                onTap: () {
                   setState(() {
                     _duration++;
                   });
-
                 },
-                child: ExtraSmallIcon(icon: Icons.add,iconColor: Colors.white,bgColor: Styles.primaryColor,)),
-
+                child: ExtraSmallIcon(
+                  icon: Icons.add,
+                  iconColor: Colors.white,
+                  bgColor: Styles.primaryColor,
+                )),
           ],
         ),
         Gap(10),
@@ -200,53 +209,60 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
           children: [
             Container(
               width: 80,
-              child:Text("Price: ",textAlign: TextAlign.start,style: GoogleFonts.montserrat(fontSize: 14,fontWeight: FontWeight.w400)),
+              child: Text("Price: ",
+                  textAlign: TextAlign.start,
+                  style: GoogleFonts.montserrat(
+                      fontSize: 14, fontWeight: FontWeight.w400)),
             ),
             GestureDetector(
-                onTap: (){
+                onTap: () {
                   setState(() {
-                    if(_price==0){
-                    }else{
-                      int check=_price-500;
-                      if(check<=0){
-                      }else{
+                    if (_price == 0) {
+                    } else {
+                      int check = _price - 500;
+                      if (check <= 0) {
+                      } else {
                         setState(() {
-                          _price=_price-500;
-                          priceController.text=_price.toString();
+                          _price = _price - 500;
+                          priceController.text = _price.toString();
                         });
                       }
-
                     }
                   });
                 },
-                child: ExtraSmallIcon(icon: CupertinoIcons.minus,iconColor: Colors.white,bgColor: Colors.redAccent,)),
+                child: ExtraSmallIcon(
+                  icon: CupertinoIcons.minus,
+                  iconColor: Colors.white,
+                  bgColor: Colors.redAccent,
+                )),
             Card(
               child: SizedBox(
                 width: 70,
                 child: TextField(
-                    controller: priceController,
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
+                  controller: priceController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
                       labelStyle: TextStyle(fontSize: 2),
                       border: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1,)
-                      )
-                    ),
-                  ),
+                          borderSide: BorderSide(
+                        width: 1,
+                      ))),
+                ),
               ),
             ),
             Text(symbol),
             GestureDetector(
-                onTap: (){
-                    setState(() {
-                      _price=_price+500;
-                      priceController.text=_price.toString();
-
-
+                onTap: () {
+                  setState(() {
+                    _price = _price + 500;
+                    priceController.text = _price.toString();
                   });
                 },
-                child: ExtraSmallIcon(icon: Icons.add,iconColor: Colors.white,bgColor: Styles.primaryColor,)),
-
+                child: ExtraSmallIcon(
+                  icon: Icons.add,
+                  iconColor: Colors.white,
+                  bgColor: Styles.primaryColor,
+                )),
           ],
         ),
         Gap(15),
@@ -255,15 +271,18 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
           children: [
             Container(
               width: 80,
-              child:Text("Weekends: ",textAlign: TextAlign.start,style: GoogleFonts.montserrat(fontSize: 14,fontWeight: FontWeight.w400)),
+              child: Text("Weekends: ",
+                  textAlign: TextAlign.start,
+                  style: GoogleFonts.montserrat(
+                      fontSize: 14, fontWeight: FontWeight.w400)),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  if(monday==true){
-                    monday=false;
-                  }else{
-                    monday=true;
+                  if (monday == true) {
+                    monday = false;
+                  } else {
+                    monday = true;
                   }
                 });
               },
@@ -271,23 +290,24 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
                   width: 40,
                   height: 25,
                   decoration: BoxDecoration(
-                      color: monday?selected:unSelected,
-                      border:Border.all(color:monday?selected:unSelected,width: 1)
-                  ),
+                      color: monday ? selected : unSelected,
+                      border: Border.all(
+                          color: monday ? selected : unSelected, width: 1)),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Mon",style:
-                    GoogleFonts.montserrat(fontSize: 12),),
-                  )
-              ),
+                    child: Text(
+                      "Mon",
+                      style: GoogleFonts.montserrat(fontSize: 12),
+                    ),
+                  )),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  if(tuesday==true){
-                    tuesday=false;
-                  }else{
-                    tuesday=true;
+                  if (tuesday == true) {
+                    tuesday = false;
+                  } else {
+                    tuesday = true;
                   }
                 });
               },
@@ -295,23 +315,24 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
                   width: 40,
                   height: 25,
                   decoration: BoxDecoration(
-                      color:tuesday?selected:unSelected,
-                      border:Border.all(color: tuesday?selected:unSelected,width: 1)
-                  ),
+                      color: tuesday ? selected : unSelected,
+                      border: Border.all(
+                          color: tuesday ? selected : unSelected, width: 1)),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Tue",style:
-                    GoogleFonts.montserrat(fontSize: 12),),
-                  )
-              ),
+                    child: Text(
+                      "Tue",
+                      style: GoogleFonts.montserrat(fontSize: 12),
+                    ),
+                  )),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  if(wednesday==true){
-                    wednesday=false;
-                  }else{
-                    wednesday=true;
+                  if (wednesday == true) {
+                    wednesday = false;
+                  } else {
+                    wednesday = true;
                   }
                 });
               },
@@ -319,18 +340,17 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
                   width: 40,
                   height: 25,
                   decoration: BoxDecoration(
-                      color: wednesday?selected:unSelected,
-                      border:Border.all(color: wednesday?selected:unSelected,width: 1)
-                  ),
+                      color: wednesday ? selected : unSelected,
+                      border: Border.all(
+                          color: wednesday ? selected : unSelected, width: 1)),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Wed",style:
-                    GoogleFonts.montserrat(fontSize: 12),),
-                  )
-              ),
+                    child: Text(
+                      "Wed",
+                      style: GoogleFonts.montserrat(fontSize: 12),
+                    ),
+                  )),
             ),
-
-
           ],
         ),
         Gap(5),
@@ -339,15 +359,18 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
           children: [
             Container(
               width: 80,
-              child:Text("",textAlign: TextAlign.start,style: GoogleFonts.montserrat(fontSize: 14,fontWeight: FontWeight.w400)),
+              child: Text("",
+                  textAlign: TextAlign.start,
+                  style: GoogleFonts.montserrat(
+                      fontSize: 14, fontWeight: FontWeight.w400)),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  if(thursday==true){
-                    thursday=false;
-                  }else{
-                    thursday=true;
+                  if (thursday == true) {
+                    thursday = false;
+                  } else {
+                    thursday = true;
                   }
                 });
               },
@@ -355,23 +378,24 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
                   width: 40,
                   height: 25,
                   decoration: BoxDecoration(
-                      color: thursday?selected:unSelected,
-                      border:Border.all(color: thursday?selected:unSelected,width: 1)
-                  ),
+                      color: thursday ? selected : unSelected,
+                      border: Border.all(
+                          color: thursday ? selected : unSelected, width: 1)),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Thur",style:
-                    GoogleFonts.montserrat(fontSize: 12),),
-                  )
-              ),
+                    child: Text(
+                      "Thur",
+                      style: GoogleFonts.montserrat(fontSize: 12),
+                    ),
+                  )),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  if(friday==true){
-                    friday=false;
-                  }else{
-                    friday=true;
+                  if (friday == true) {
+                    friday = false;
+                  } else {
+                    friday = true;
                   }
                 });
               },
@@ -379,23 +403,24 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
                   width: 40,
                   height: 25,
                   decoration: BoxDecoration(
-                      color: friday?selected:unSelected,
-                      border:Border.all(color: friday?selected:unSelected,width: 1)
-                  ),
+                      color: friday ? selected : unSelected,
+                      border: Border.all(
+                          color: friday ? selected : unSelected, width: 1)),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Fri",style:
-                    GoogleFonts.montserrat(fontSize: 12),),
-                  )
-              ),
+                    child: Text(
+                      "Fri",
+                      style: GoogleFonts.montserrat(fontSize: 12),
+                    ),
+                  )),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  if(saturday==true){
-                    saturday=false;
-                  }else{
-                    saturday=true;
+                  if (saturday == true) {
+                    saturday = false;
+                  } else {
+                    saturday = true;
                   }
                 });
               },
@@ -403,18 +428,17 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
                   width: 40,
                   height: 25,
                   decoration: BoxDecoration(
-                      color: saturday?selected:unSelected,
-                      border:Border.all(color: saturday?selected:unSelected,width: 1)
-                  ),
+                      color: saturday ? selected : unSelected,
+                      border: Border.all(
+                          color: saturday ? selected : unSelected, width: 1)),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Sat",style:
-                    GoogleFonts.montserrat(fontSize: 12),),
-                  )
-              ),
+                    child: Text(
+                      "Sat",
+                      style: GoogleFonts.montserrat(fontSize: 12),
+                    ),
+                  )),
             ),
-
-
           ],
         ),
         Gap(5),
@@ -423,15 +447,18 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
           children: [
             Container(
               width: 80,
-              child:Text("",textAlign: TextAlign.start,style: GoogleFonts.montserrat(fontSize: 14,fontWeight: FontWeight.w400)),
+              child: Text("",
+                  textAlign: TextAlign.start,
+                  style: GoogleFonts.montserrat(
+                      fontSize: 14, fontWeight: FontWeight.w400)),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  if(sunday==true){
-                    sunday=false;
-                  }else{
-                    sunday=true;
+                  if (sunday == true) {
+                    sunday = false;
+                  } else {
+                    sunday = true;
                   }
                 });
               },
@@ -439,68 +466,77 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
                   width: 40,
                   height: 25,
                   decoration: BoxDecoration(
-                      color: sunday?selected:unSelected,
-                      border:Border.all(color:sunday?selected:unSelected,width: 1)
-                  ),
+                      color: sunday ? selected : unSelected,
+                      border: Border.all(
+                          color: sunday ? selected : unSelected, width: 1)),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Sun",style:
-                    GoogleFonts.montserrat(fontSize: 12),),
-                  )
-              ),
+                    child: Text(
+                      "Sun",
+                      style: GoogleFonts.montserrat(fontSize: 12),
+                    ),
+                  )),
             ),
-
-
-
           ],
         ),
         Gap(10),
-        GestureDetector(onTap: (){
-
-        processData();
-        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (builder)=>DoctorsNavigationBar(selectedIndex: 0,)),(route) => false,);
-
-        },
-            child:PrimaryButton(width: double.infinity,height:size.height*0.045 ,title: "Save",), )
-
-
+        GestureDetector(
+          onTap: () {
+            processData();
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                  builder: (builder) => DoctorsNavigationBar(
+                        selectedIndex: 0,
+                      )),
+              (route) => false,
+            );
+          },
+          child: PrimaryButton(
+            width: double.infinity,
+            height: size.height * 0.045,
+            title: "Save",
+          ),
+        )
       ],
     );
   }
+
   void processData() {
     addDataintoList();
-    if(validateData()){
-      DatabaseReference reference = FirebaseDatabase.instance.ref("Users").child("sessions").child(FirebaseAuth.instance.currentUser!.uid);
-      Map<String,Object> map={
-        'startHr':_startHr,
-        'startMin':_startMin,
-        'endHr':_endHr,
-        'endMin':_endMin,
-        'duration':_duration,
-        'price':int.parse(priceController.text),
-        'weekends':weekends
-
+    if (validateData()) {
+      DatabaseReference reference = FirebaseDatabase.instance
+          .ref("Users")
+          .child("sessions")
+          .child(FirebaseAuth.instance.currentUser!.uid);
+      Map<String, Object> map = {
+        'startHr': _startHr,
+        'startMin': _startMin,
+        'endHr': _endHr,
+        'endMin': _endMin,
+        'duration': _duration,
+        'price': int.parse(priceController.text),
+        'weekends': weekends
       };
-      reference.update(map).whenComplete(() => (){
-      });
+      reference.update(map).whenComplete(() => () {});
 
-      DatabaseReference docRef = FirebaseDatabase.instance.ref("Users").child("Doctors").child(FirebaseAuth.instance.currentUser!.uid);
-      Map<String,Object> docMap={'scheduled':true};
+      DatabaseReference docRef = FirebaseDatabase.instance
+          .ref("Users")
+          .child("Doctors")
+          .child(FirebaseAuth.instance.currentUser!.uid);
+      Map<String, Object> docMap = {'scheduled': true};
       docRef.update(docMap);
-
-
-
-    }else{
-
-    }
+    } else {}
   }
+
   void showMessage(String s) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(s)),
     );
   }
+
   bool validateData() {
-    if(priceController.text.length<1){
+    if (priceController.text.length < 1) {
       return false;
     }
 
@@ -508,19 +544,19 @@ class _DoctorMeetingDialogState extends State<DoctorMeetingDialog> {
   }
 
   void addDataintoList() {
-    if(monday){
+    if (monday) {
       weekends.add(DateTime.monday);
-    }else if(tuesday){
+    } else if (tuesday) {
       weekends.add(DateTime.tuesday);
-    }else if(wednesday){
+    } else if (wednesday) {
       weekends.add(DateTime.wednesday);
-    }else if(thursday){
+    } else if (thursday) {
       weekends.add(DateTime.thursday);
-    }else if(friday){
+    } else if (friday) {
       weekends.add(DateTime.friday);
-    }else if(saturday){
+    } else if (saturday) {
       weekends.add(DateTime.saturday);
-    }else if(sunday){
+    } else if (sunday) {
       weekends.add(DateTime.sunday);
     }
   }

@@ -21,29 +21,33 @@ class PatientDashboard extends StatefulWidget {
 
   @override
   State<PatientDashboard> createState() => _PatientDashboardState();
-
-
-
 }
 
-
 class _PatientDashboardState extends State<PatientDashboard> {
-
-  String name="";
-  String imgURL="";
+  String name = "";
+  String imgURL = "";
 
   @override
   Widget build(BuildContext context) {
-    final size=AppLayout.getSize(context);
+    final size = AppLayout.getSize(context);
     return Scaffold(
       backgroundColor: Styles.bgColor,
       body: Column(
         children: [
           InkWell(
-            onTap: (){
-              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (builder)=>PatientNavigationBar(selectedindex: 4,)), (route) => false);
-            },
-              child: GreetingContainer(title: name,imageAsset: imgURL,)),
+              onTap: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                        builder: (builder) => PatientNavigationBar(
+                              selectedindex: 4,
+                            )),
+                    (route) => false);
+              },
+              child: GreetingContainer(
+                title: name,
+                imageAsset: imgURL,
+              )),
           Expanded(
             child: ListView(
               scrollDirection: Axis.vertical,
@@ -54,30 +58,28 @@ class _PatientDashboardState extends State<PatientDashboard> {
               ],
             ),
           )
-
         ],
       ),
     );
-
   }
 
   @override
   void initState() {
-   getPatientInfo();
+    getPatientInfo();
   }
 
   void getPatientInfo() {
-    DatabaseReference reference = FirebaseDatabase.instance.ref("Users").child("Patients").child(FirebaseAuth.instance.currentUser!.uid);
+    DatabaseReference reference = FirebaseDatabase.instance
+        .ref("Users")
+        .child("Patients")
+        .child(FirebaseAuth.instance.currentUser!.uid);
 
-    Stream<DatabaseEvent> stream=reference.onValue;
+    Stream<DatabaseEvent> stream = reference.onValue;
     stream.listen((event) {
       setState(() {
-        name=event.snapshot.child("name").value.toString();
-        imgURL=event.snapshot.child("imgURL").value.toString();
+        name = event.snapshot.child("name").value.toString();
+        imgURL = event.snapshot.child("imgURL").value.toString();
       });
-
     });
-
   }
-
 }

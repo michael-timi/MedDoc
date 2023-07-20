@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:538340785905:android:6ad46ff129d12a390ff350",
         "android_client_info": {
-          "package_name": "com.saarimtech.meddoc.meddoc"
+          "package_name": "com.app.meddoc"
         }
       },
       "oauth_client": [
@@ -34,7 +34,7 @@
               "client_id": "538340785905-24cjt779107no93p96cvkai46eb16kgs.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.saarimtech.meddoc.meddoc"
+                "bundle_id": "com.app.meddoc"
               }
             }
           ]

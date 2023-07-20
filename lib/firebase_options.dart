@@ -70,7 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '538340785905',
     projectId: 'meddoc-10c45',
     storageBucket: 'meddoc-10c45.appspot.com',
-    iosClientId: '538340785905-24cjt779107no93p96cvkai46eb16kgs.apps.googleusercontent.com',
-    iosBundleId: 'com.saarimtech.meddoc.meddoc',
+    iosClientId:
+        '538340785905-24cjt779107no93p96cvkai46eb16kgs.apps.googleusercontent.com',
+    iosBundleId: 'com.app.meddoc',
   );
 }
